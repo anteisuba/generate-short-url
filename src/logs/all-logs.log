@@ -1,0 +1,9 @@
+{"level":30,"time":1765777732104,"pid":43047,"hostname":"Mac","msg":"Connecting to Postgres localhost:5432/postgres (timeout 5000ms)"}
+{"level":30,"time":1765777732169,"pid":43047,"hostname":"Mac","0":"Executing (default): SELECT 1+1 AS result","1":{"plain":true,"raw":true,"type":"SELECT"}}
+{"level":30,"time":1765777732170,"pid":43047,"hostname":"Mac","msg":"Connection has been established successfully."}
+{"level":30,"time":1765777737789,"pid":43245,"hostname":"Mac","msg":"Connecting to Postgres localhost:5432/postgres (timeout 5000ms)"}
+{"level":30,"time":1765777737835,"pid":43245,"hostname":"Mac","0":"Executing (default): SELECT 1+1 AS result","1":{"plain":true,"raw":true,"type":"SELECT"}}
+{"level":30,"time":1765777737836,"pid":43245,"hostname":"Mac","msg":"Connection has been established successfully."}
+{"level":30,"time":1765778892914,"pid":72562,"hostname":"Mac","msg":"Connecting to Postgres localhost:5432/postgres (timeout 5000ms)"}
+{"level":30,"time":1765778892955,"pid":72562,"hostname":"Mac","0":"Executing (default): SELECT 1+1 AS result","1":{"plain":true,"raw":true,"type":"SELECT"}}
+{"level":30,"time":1765778892955,"pid":72562,"hostname":"Mac","msg":"Connection has been established successfully."}

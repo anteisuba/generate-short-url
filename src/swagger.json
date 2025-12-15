@@ -1,0 +1,176 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "默认模块",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/{urlRecord}": {
+      "post": {
+        "summary": "Create URL Record",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "urlRecord",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "originURL": "https://sequelize.org/docs/v6/core-concepts/model-instances/"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "message": "URL record created success",
+                  "data": {
+                    "id": "1765717728705",
+                    "originURL": "https://expressjs.com/en/guide/routing.html",
+                    "shortURL": "http://localhost:5432/express",
+                    "urlCode": "express",
+                    "updatedAt": "2025-12-14T13:08:48.706Z",
+                    "createdAt": "2025-12-14T13:08:48.706Z"
+                  }
+                }
+              }
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /v1/</pre>\n</body>\n</html>\n"
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/{urlCode}": {
+      "get": {
+        "summary": "get redirect originCode",
+        "deprecated": false,
+        "description": "get url",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "urlCode",
+            "in": "path",
+            "description": "The unique url code to indentify short URL",
+            "required": true,
+            "example": "RDlNd5",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "message",
+                    "data"
+                  ]
+                }
+              }
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "message"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "异常示例",
+                    "value": {
+                      "message": "URL code not found"
+                    }
+                  },
+                  "2": {
+                    "summary": "成功示例",
+                    "value": {
+                      "message": "Success",
+                      "data": "https://sequelize.org/docs/v6/core-concepts/model-instances/"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "webhooks": {},
+  "components": {
+    "schemas": {},
+    "responses": {},
+    "securitySchemes": {}
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/v1",
+      "description": "开发环境"
+    }
+  ],
+  "security": []
+}
